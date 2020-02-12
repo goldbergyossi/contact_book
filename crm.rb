@@ -3,6 +3,7 @@ require_relative 'contact'
 class CRM 
 
   def initialize
+    
 
   end
 
@@ -24,7 +25,16 @@ class CRM
     puts 'Enter a number: '
   end
 
-  def call_option
+  def call_option(user_selected)
+    case user_selected
+    when 1 then add_new_contact
+    when 2 then modify_existing_contact
+    when 3 then delete_contact
+    when 4 then display_all_contacts
+    when 5 then search_by_attribute
+    when 6 then exit 
+
+    end 
 
   end
 
@@ -46,20 +56,56 @@ class CRM
   end
 
   def modify_existing_contact
+    print "Enter the ID of the contact you would like to modify? "
+    contacts_id = gets.chomp
+    
 
   end
 
   def delete_contact
+    def delete_contact
+      print 'Enter ID of contact: '
+      id = gets.chomp.to_i
+      Contact.find(id).delete
+    end
 
   end
 
   def display_all_contacts
+    p Contact.all
     
   end
 
   def search_by_attribute
+    puts "Select from the following options: "
+    puts "1. First name "
+    puts "2. Last name "
+    puts "3. Email "
+    select_option = gets.chomp.to_i
+    if select_option == 1
+      print "Enter first name "
+      user_input = gets.chomp
+      p Contact.find_by("1", user_input)
+    end 
+    if select_option == 2
+      print "Enter last name "
+      user_input = gets.chomp
+      p Contact.find_by("2", user_input)
+    end 
+    if select_option == 3
+      print "Enter email "
+      user_input = gets.chomp
+      p Contact.find_by("3", user_input)
+    end 
+    
+
+
+
     
   end
 
 
 end
+
+a_crm_app = CRM.new
+a_crm_app.main_menu

@@ -72,13 +72,13 @@ class Contact
   	elsif type == "2"
   		@@contacts.each do |l|
   			if l.last_name == input
-  				return l.last_name
+  				return l
   			end
   		end
   	elsif type == "3"
   		@@contacts.each do |e|
   			if e.email == input
-  				return e.email
+  				return e
   			end
   		end
   	end
@@ -112,7 +112,7 @@ class Contact
 end
 
 # a = Contact.create("Yossi", "Goldberg", "hgjdf", "jhsg")
-# # p Contact.find(1)
+# p Contact.find(1)
 # p Contact.find_by("1", "Yossi")
 # a.update("3", "yygold")
 # p Contact.all
