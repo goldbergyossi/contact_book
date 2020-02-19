@@ -51,7 +51,12 @@ class CRM
     print 'Enter a Note: '
     note = gets.chomp
 
-  Contact.create(first_name, last_name, email, note)
+    contact = Contact.create(
+      first_name: first_name,
+      last_name:  last_name,
+      email:      email,
+      note:       note
+    )
 
   end
 
@@ -70,6 +75,7 @@ class CRM
     end
 
   end
+
 
   def display_all_contacts
     p Contact.all
@@ -98,10 +104,6 @@ class CRM
       p Contact.find_by("3", user_input)
     end 
     
-
-
-
-    
   end
 
 
@@ -113,3 +115,4 @@ a_crm_app.main_menu
 at_exit do
   ActiveRecord::Base.connection.close
 end
+
