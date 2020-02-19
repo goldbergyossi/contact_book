@@ -91,17 +91,17 @@ class CRM
     if select_option == 1
       print "Enter first name "
       user_input = gets.chomp
-      p Contact.find_by("1", user_input)
+      p Contact.find_by(first_name: user_input)
     end 
     if select_option == 2
       print "Enter last name "
       user_input = gets.chomp
-      p Contact.find_by("2", user_input)
+      p Contact.find_by(last_name: user_input)
     end 
     if select_option == 3
       print "Enter email "
       user_input = gets.chomp
-      p Contact.find_by("3", user_input)
+      p Contact.find_by(email: user_input)
     end 
     
   end
