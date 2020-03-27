@@ -1,0 +1,38 @@
+<h1><%= @title %></h1>
+
+<div>
+<a href="/edit/<%= @contact.id%>"> edit </a>
+<hr>
+
+<%# <form action='/delete/<%=@recipe.id' method='POST'>
+<input type='hidden' name='_method' value='delete'>
+<input type='submit' value='Delete Recipe'>
+</form> %> %>
+</div>
+
+
+
+<hr>
+
+
+
+<p>
+First Name: <%= @contact.first_name %>
+</p>
+
+<p>
+Last Name: <%= @contact.last_name %>
+</p>
+
+
+<p>
+Phone Number: <%= @contact.phone_number %>
+</p>
+
+<p>
+Email: <%= @contact.email %>
+</p>
+
+<p>
+Note: <%= @contact.note %>
+</p>

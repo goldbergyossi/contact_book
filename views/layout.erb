@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Contact Book &raquo; <%= @title %></title>
+  </head>
+  <body>
+    <header>
+      
+      <a href="/"> <img class="logo" src="/contact_book.svg" alt="Contact Book Icon" id="contactbook_image"></a>
+    </header>
+​
+    <main>
+      <%= yield %>
+    </main>
+​
+    <footer>
+      <a href="/form">Add Contact</a>
+    </footer>
+  </body>
+</html>
